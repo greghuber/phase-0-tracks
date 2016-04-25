@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	Practice-form
+</title>
+</head>
+<body>
+<form name="adventure" action="success.html" method="post">
+ <div>
+ 	<label>Favorite Sport:</label>
+ 	<select>
+ 		<option value ="Basketball"> Basketball
+ 		<option value="Football">Football
+ 		<option value="Tennis">Tennis
+ 	</select>
+</div>
+	<label>Tell us about yourself: </label>
+<div>
+	<textarea name="textarea" rows="10" cols="50">Write something here</textarea>
+</div>
+<div>
+	<label>Favorite Food: </label>
+	<input type="text" name="favorite-food">
+</div>	
+<div>
+	<input type="checkbox" name="cb-agree" value="agree">
+    I love programming.
+</div>
+<div>
+<label>Choose a sport from this list: </label>
+<input list="sports" name="my-sports" />
+	<datalist id="sports">
+		<option value="Golf">
+		<option value="Football">
+		<option value="Baseball">
+		<option value="Soccer">
+		<option value="Hockey">
+	</datalist>
+</div>
+  	<button type="submit">Submit your form</button>
+</form>
+</body>
+</html>
