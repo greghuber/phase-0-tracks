@@ -1,5 +1,5 @@
 body {
-  width: 960px;
+  max-width: 960px;
 }
 
 .column {
@@ -18,16 +18,20 @@ cite {
 }
 
 #main {
-  width: 756px;
+  width: 50%;
 }
 
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-  width: 200px;
+  width: 25%;
   float: left;
+  min-width: 150px;
 }
-
+#third {
+  width: 20%;
+  float: right;
+}
 
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
@@ -44,3 +48,19 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 1em;
+  }
+  #third {
+    opacity: 0;
+  }
+  #main {
+    width: 100%;
+  }
+  #external-links {
+    width: 100%;
+  } 
+}
