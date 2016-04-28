@@ -5,6 +5,11 @@
 	background-color: #e9e5dc;
 	padding: .4px;
 	margin-top: 20px;
+	border-radius: 10px;
+}
+.job h3 {
+	position: relative;
+	left: 5px;
 }
 .unordered {
 	font-size: .8em;
