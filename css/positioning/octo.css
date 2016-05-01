@@ -1,0 +1,18 @@
+#octopus.body
+{
+	position: relative;
+	margin: 290px 800px 800px 800px;
+	z-index: -1;
+}
+#glasses.accessories
+{
+	position: absolute;
+	left:845px;
+	top:400px;
+}
+#hat.accessories
+{
+	position: absolute;
+	left:775px;
+	top:225px;
+}
