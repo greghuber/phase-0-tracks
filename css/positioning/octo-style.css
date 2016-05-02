@@ -1,15 +1,15 @@
+
 .glasses {
 	position: relative;
-	left: -172px;
-	top: -130px;
-	}
-
+	left: 145px;
+	top: -300px;
+}
 .hat {
 	position: relative;
-	left: -370px;
-	top: -200px;
+	left: -55px;
+	top: -370px;
 	}
 .octopus-group {
 	margin-top: 180px;
-	margin-left: 400px;
+	text-align: center;
 }
