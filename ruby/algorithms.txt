@@ -1,0 +1,34 @@
+#Approach the up and down buttons near elevator doors
+
+#Ask Master for the desired floor
+
+#If the desired floor number is greater than the current floor, 
+#and if the up button is not already lit, press the up button
+#Or if the desired floor number is less than the current floor, 
+#and if the down button is not already lit, press the down button
+#Or, if the desired floor is the current floor, tell Master that
+
+#When the desired up/down button becomes unlit
+#Locate the elevator doors with a corresponding up/down light lit
+#Move toward and enter that elevator's doors when they open
+
+#Find panel with buttons for floors
+#Position self within reach of buttons
+
+#As long as people are entering the elevator, press OPEN DOORS button
+
+#If anyone but Master is in the elevator, ask them what floor they desire
+	
+#For each requested floor, 
+#Locate the button with that number on it or next to it.
+#if requested floor number appears on panel, and is not already lit, press button for that floor
+
+#Otherwise, say that building doesn't have that floor
+#Repeat until four seconds go by without a valid floor request, or until the number of buttons pressed is equal to the number of humans in the elevator (so some kid doesn't call out all the floors in a highrise)
+
+#If the button for Master's desired floor is on the panel and its button is not lit, 
+#press that floor's button
+#Otherwise, if the number appears but is lit, do nothing,
+#Otherwise, tell Master that building doesn't have that floor, and request another floor number
+#Repeat until Master suggests a valid floor or suggests you two leave quickly
+#If Master suggests you two leave quicly, follow him off the elevator
