@@ -31,19 +31,26 @@ else
 end
 
 #result = nil
-#Write conditional statements to evaluate answers.  Allow that the new employee
+#Write conditional statements to run first three evaluations.  Allow that the new employee
 #may not have had his birthday yet this year.
 
-if ((age == age_math) || (age = age_math - 1)) && (garlic || health)
+if ((age == age_math) || (age == age_math - 1)) && (garlic || health)
 	result = "Probably not a vampire."
-elsif ((age != age_math) || (age != age_math - 1)) && (!garlic || !health)
+elsif ((age != age_math) && (age != age_math - 1)) && ( !garlic || !health) && !( !garlic && !health)
 	result = "Probably a vampire."
-elsif ((age != age_math) || (age !=age_math - 1)) && !garlic && !health
+elsif ((age != age_math) && (age != age_math - 1)) && !garlic && !health
 	result = "Almost certainly a vampire."
-elsif (name == "Drake Cula") || (name == "Tu Fang")
-	result = "Definitely a vampire."
 else
-	result = "Results inconclusive."
+	result = nil
+end
+
+#Write conditional statement for last two.  Must do seperately for name check to be run in
+#order specified in challenge, otherwise if first three were met, would not get to name
+
+if (name == "Drake Cula") || (name == "Tu Fang")
+	result = "Definitely a vampire."
+elsif result == nil
+	result = "Results Inconclusive"
 end
 
 puts result
