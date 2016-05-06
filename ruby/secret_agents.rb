@@ -33,12 +33,44 @@ index = 0
 	return code
 end
 
-puts "What is your password?"
-password = gets.chomp
-puts encrypt(password)
+#puts encrypt("password")
 
-puts "What is the encrypted password?"
-scrambled = gets.chomp
-puts decrypt(scrambled)
+#puts decrypt("qbttxpse")
+
+#puts decrypt(encrypt("swordfish"))
+
+valid = false
+	until valid
+		puts "Would you like to decrypt or encrypt a password?  Type one."
+		answer = gets.chomp
+		if (answer == "decrypt" || answer == "encrypt")
+			valid = true
+		end
+	end
+
+puts "What's the password?"
+password = gets.chomp
+
+if answer == "decrypt"
+	puts decrypt(password)
+else 
+	puts encrypt(password)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
