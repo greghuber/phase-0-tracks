@@ -1,5 +1,6 @@
 # Ask user how many employees will be processed and loop through the
 # survey process for that many entries
+
 puts "How many new employees will you be processing?\nPlease type a number."
 new_employees = gets.chomp.to_i
 
@@ -82,9 +83,9 @@ until entries == new_employees
 		
 		# Write conditional statement for last two evaluations.  
 		# Must do seperately for name check to be run in order specified in challenge, 
-		# otherwise if any of first three were met, name check not run.
+		# otherwise if any of first three were met, name check would not run.
 		
-		if (name == "Drake Cula") || (name == "Tu Fang")
+		if name == "Drake Cula" || name == "Tu Fang"
 			result = "Definitely a vampire."
 		elsif result == nil
 			result = "Results Inconclusive"
@@ -97,6 +98,9 @@ until entries == new_employees
 	entries += 1
 end
 
+# Add plot twist
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
 
