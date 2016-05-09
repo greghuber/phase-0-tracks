@@ -41,10 +41,14 @@ until total_vampires == int_total
 	puts "Any particular allergies we should be aware of? Please type 'done' if none, or when you're finished."
 	allergies = gets.chomp
 
-	while allergies != "done" && allergies != "sunshine"
-		puts "Are you lying to us?"
-		allergies = gets.chomp
+	until allergies == "done"
+		if allergies == "sunshine"
+			puts "Probably a vampire!"
+			allergies = "done"
+		else allergies = gets.chomp
 		end
+	end
+	
 #Evaluation of interviewee
 	if name == false
 		puts "Definitely a vampire!"
