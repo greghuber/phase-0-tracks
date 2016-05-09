@@ -5,7 +5,7 @@ total_vampires = 0
 
 #Interview for potential vampires
 until total_vampires == int_total
-	puts "What is your name?"
+	puts "New interviewee, what is your name?"
 	name = gets.chomp
 
 		if name == "Drake Cula" || name == "Tu Fang"
@@ -55,8 +55,9 @@ until total_vampires == int_total
 	elsif trueage == false && bread == false && health == false
 		puts "Almost certainly a vampire!"
 	else
-		puts "Results inconlusive."
+		puts "Results inconclusive."
 	end
 
 	total_vampires += 1
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
