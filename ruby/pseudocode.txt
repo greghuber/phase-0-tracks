@@ -1,0 +1,33 @@
+How to get off at the 25th floor, an algorithm
+
+set "floor" to 25
+
+enter lobby
+turn 90 degrees clockwise
+proceed towards wall
+turn 90 degrees counterclockwise
+travel against the wall until evevator is found
+press call button
+
+enter elevator
+turn 180 degrees
+for each button
+if "floor" exists:
+press "floor"
+
+exit at "floor"
+____________________________________________
+
+how to cook spaghetti, an algorithm
+
+put water in pot
+boil water
+heat sauce
+until spaghetti = "done"
+put spaghetti in water
+
+then drain spaghetti
+and add to sauce.
+ 
+
+
