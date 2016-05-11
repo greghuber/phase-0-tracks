@@ -58,7 +58,7 @@ p client_details
 # Convert the response to a symbol representing the proper key
 # Set a variable equal to the key to take into the conditional check
 
-puts "Did you make any mistakes?  It's OK, it happens.\nEnter the category you misentered.  If none, enter 'none'."
+puts "Did you make any mistakes?  It's OK, it happens.\nEnter the category you wish to correct.  If none, enter 'none'."
 key = gets.chomp.to_sym
 
 # Based on user's response either do nothing or ask a question based on the 
