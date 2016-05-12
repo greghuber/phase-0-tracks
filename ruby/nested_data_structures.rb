@@ -45,3 +45,50 @@ andel_hotels = {
 		near_highway: true
 	}
 }
+
+# CALL ON AND/OR MODIFY DATA STRUCTURE WITH VARIOUS COMMANDS
+
+# Retrieve name of Dressler Inn's general manager.
+puts " "
+puts "Dressler's general manager is #{andel_hotels[:dressler_inn][:general_manager]}."
+puts " "
+
+# Retrieve the number of rooms in the Pelletier Hotel.
+# Retrieve the number that are suites.
+
+pelletier_rooms = 0
+andel_hotels[:pelletier_hotel][:room_type].each do |type, number|
+	pelletier_rooms += number
+end
+
+puts "The Pelletier has #{pelletier_rooms} rooms."
+puts "#{ andel_hotels[:pelletier_hotel][:room_type][:suite] } of those are suites."
+puts " "
+
+#Retrieve the number of amenities the Baker Motel lists.
+
+puts "The Baker lists #{ andel_hotels[:baker_motel][:amenities].length } amenities."
+puts " "
+
+# The Baker just got Wi-Fi!  Update their data and the above, and list their amenities.
+
+andel_hotels[:baker_motel][:amenities].push("Free Wi_fi")
+puts "The Baker now lists #{ andel_hotels[:baker_motel][:amenities].length } amenities."
+puts andel_hotels[:baker_motel][:amenities]
+puts " "
+
+# Retrieve the list of Andel Hotels near a highway.
+
+andel_hotels.each  do |hotel, value| 
+	
+	hotel.each do |label, value|
+		if (label == "near_highway") && value
+			puts hotel
+		end
+	end
+end
+
+
+
+
+
