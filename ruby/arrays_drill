@@ -1,0 +1,42 @@
+def build_array(item1, item2, item3)
+	the_array = []
+	the_array << item1
+	the_array << item2
+	the_array << item3
+	return the_array
+end
+
+def add_to_array(array, item)
+	array << item
+	return array
+end
+
+our_array = []
+p our_array
+
+our_array += ["string1","string2","string3","string4","string5"]
+p our_array
+
+our_array.delete_at(2)
+p our_array
+
+our_array.insert(2,"new_string")
+p our_array
+
+our_array.shift
+p our_array
+
+array_search = our_array.include?("new_string")
+puts "It is #{array_search} that 'new_string' is in our_array"
+
+another_array = ["data1","data2","data3"]
+third_array = another_array + our_array
+p third_array
+
+array_test = build_array("item1","item2","item3")
+p array_test
+
+array_test = add_to_array(["first","second","third"], "fourth")
+p array_test
+array_test = add_to_array([233,4565,44.55], -555.55444)
+p array_test
