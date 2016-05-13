@@ -11,13 +11,11 @@ def alias_name(real_name)
 	# Turn real name into array to reverse items.  Rejoin into string and
 	# make all letters lowercase to process.  Assign to variable swap_name.
 	
-	# TEST real_name = "Felicia Torres"
-	# TEST p real_name
 	swap_name = real_name.split(' ').reverse.join(' ').downcase
-	# TEST swap_name
 	
 	# Set variables to check for vowels and consonants, including edge cases.
 	# Set loop counter to 0.
+
 	vowels = "aeioua"
 	consonants = "bcdfghjklmnpqrstvwxyzb"
 	counter = 0
@@ -40,17 +38,37 @@ def alias_name(real_name)
 	
 	counter += 1
 	end
-	# TEST swap_name
 	
 	# Turn revised swap_name into array to capitalize each item then rejoin
 	# into string.  Assign to variable code_name to return.
 	
 	code_name = swap_name.split(' ').map {|x| x.capitalize }.join(' ')
 	
-	return code_name
 end
 
-puts alias_name("Felicia Torres")
+# Add user interface that lets a user enter a real name and get an alias back. 
+# Let the user do this repeatedly until they decide to quit by typing 'quit'. 
+
+puts " "
+puts "WELCOME TO THE ALIASINATOR."
+puts " "  
+puts "Enter a spy's real name to convert to an alias."
+puts "When done, enter 'quit'."
+puts " "
+
+real_name = nil
+until real_name == "quit" 
+	
+	puts "What is the spy's real name?"
+	real_name = gets.chomp
+
+		if real_name != "quit"
+			spy_name = alias_name(real_name)
+			puts "The spy, #{real_name}, has an alias of #{spy_name}"
+			puts " "
+		end
+end
+	
 
 
 
