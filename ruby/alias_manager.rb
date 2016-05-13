@@ -11,12 +11,46 @@
 # Turn real name into array to reverse items.  Rejoin into string and
 # make all letters lowercase to process.  Assign to variable swap_name.
 
-realname = "Felicia Torres"
+real_name = "Felicia Torres"
+# TEST p real_name
+swap_name = real_name.split(' ').reverse.join(' ').downcase
+# TEST swap_name
 
-swap_name = realname.split(' ').reverse.join(' ').downcase
-p swap_name
+# Set variables to check for vowels and consonants, including edge cases.
+# Set loop counter to 0.
+vowels = "aeioua"
+consonants = "bcdfghjklmnpqrstvwxyzb"
+counter = 0
 
 # Iterate through swap_name applying rules for spaces, vowels and consonants.
 
+while counter < swap_name.length
+
+	if swap_name[counter] == " "
+	
+	elsif (swap_name[counter] == "a") || (swap_name[counter] == "e") || (swap_name[counter] == "i") || (swap_name[counter] == "o") || (swap_name[counter] == "u")
+		current = vowels.index(swap_name[counter])
+		swap_name[counter] = vowels[current + 1]
+		
+	else
+		current = consonants.index(swap_name[counter])
+		swap_name[counter] = consonants[current + 1]
+				
+	end
+
+counter += 1
+end
+# TEST swap_name
+
 # Turn revised swap_name into array to capitalize each item then rejoin
 # into string.  Assign to variable code_name to return.
+
+code_name = swap_name.split(' ').map {|x| x.capitalize }.join(' ')
+
+p code_name
+
+
+
+
+
+
