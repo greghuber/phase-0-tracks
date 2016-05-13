@@ -11,6 +11,11 @@
 # Turn real name into array to reverse items.  Rejoin into string and
 # make all letters lowercase to process.  Assign to variable swap_name.
 
+realname = "Felicia Torres"
+
+swap_name = realname.split(' ').reverse.join(' ').downcase
+p swap_name
+
 # Iterate through swap_name applying rules for spaces, vowels and consonants.
 
 # Turn revised swap_name into array to capitalize each item then rejoin
