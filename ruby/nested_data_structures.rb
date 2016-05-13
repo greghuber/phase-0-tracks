@@ -77,14 +77,13 @@ puts "The Baker now lists #{ andel_hotels[:baker_motel][:amenities].length } ame
 puts andel_hotels[:baker_motel][:amenities]
 puts " "
 
-# Retrieve the list of Andel Hotels near a highway.
+# Retrieve the list of Andel Hotels not close to a highway.
 # Want output to be result of 2nd puts command but using variable as in first
 
 andel_hotels.each  do |hotel, value| 
 	value.each do |k, v|
-		if k == :near_highway && v
-		puts hotel
-		puts "#{andel_hotels[:baker_motel][:name]} is near a highway."
+		if k == :near_highway && v == false
+		puts "#{andel_hotels[hotel][:name]} is not near a highway."
 		end
 	end
 end
