@@ -49,6 +49,10 @@ end
 # Add user interface that lets a user enter a real name and get an alias back. 
 # Let the user do this repeatedly until they decide to quit by typing 'quit'. 
 
+# Add hash data structure to store real-name-spy-name pairs
+
+spy_aliases = Hash.new
+
 puts " "
 puts "WELCOME TO THE ALIASINATOR."
 puts " "  
@@ -59,16 +63,23 @@ puts " "
 real_name = nil
 until real_name == "quit" 
 	
-	puts "What is the spy's real name?"
+	puts "What is the next spy's real name?"
 	real_name = gets.chomp
+
+# Until the user types 'quit' convert name to alias and store both names in
+# the hash spy_aliases.
 
 		if real_name != "quit"
 			spy_name = alias_name(real_name)
-			puts "The spy, #{real_name}, has an alias of #{spy_name}"
+			spy_aliases[real_name] = spy_name
 			puts " "
 		end
 end
 	
+# Print out all stored spy's real and alias names.
+
+spy_aliases.each { |real_name, alias_name|
+	puts "#{alias_name} is actually the spy #{real_name}." }
 
 
 
