@@ -26,7 +26,7 @@ def alias_name(real_name)
 	
 		if swap_name[counter] == " "
 		
-		elsif (swap_name[counter] == "a") || (swap_name[counter] == "e") || (swap_name[counter] == "i") || (swap_name[counter] == "o") || (swap_name[counter] == "u")
+		elsif ["a", "e", "i", "o", "u"].include?(swap_name[counter])	
 			current = vowels.index(swap_name[counter])
 			swap_name[counter] = vowels[current + 1]
 			
