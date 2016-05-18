@@ -2,6 +2,8 @@
 # A speak method, an eat_milk_and_cookies method, and an initialize method
 
 class Santa
+  attr_reader :name, :age, :ethnicity
+  attr_accessor :gender	
 
   def initialize(name, gender, ethnicity)
   	puts "Initializing Santa instance ..."
@@ -21,9 +23,7 @@ class Santa
   	puts "That was a good #{cookie} cookie!"
   end
 
-  # setter methods
-
-  	def celebrate_birthday
+  def celebrate_birthday
   	@age += 1
   end
 
@@ -32,29 +32,6 @@ class Santa
 	@reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(offender_index))
   	puts "After #{other_reindeer}'s behavior the reindeer ranking is now #{@reindeer_ranking}."
   end
-
-  def change_gender=(new_gender)
-  	@gender = new_gender
-  end
-
-  # getter methods
-
-  def name
-  	@name
-  end
-
-  def age
-  	@age
-  end
-
-  def ethnicity
-  	@ethnicity
-  end
-
-  def gender
-  	@gender
-  end
-
 end
 
 # Initialize a Santa and verify instance methods
@@ -75,7 +52,7 @@ santas << Santa.new(names[2], genders[1], ethnicities[4])
 
 puts "#{santas[1].name} is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
 santas[1].celebrate_birthday
-santas[1].change_gender = "male"
+santas[1].gender = "male"
 santas[1].get_mad_at("Vixen")
 puts "#{santas[1].name} is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
 
