@@ -2,17 +2,17 @@
 # A speak method, an eat_milk_and_cookies method, and an initialize method
 
 class Santa
-  attr_reader :name, :age, :ethnicity
+  # give read only permission to @age and @ethnicity outside the class
+  # and read/write permission to @gender outside the class
+  attr_reader :age, :ethnicity
   attr_accessor :gender	
 
-  def initialize(name, gender, ethnicity)
+  def initialize(gender, ethnicity)
   	puts "Initializing Santa instance ..."
-  	@name = name
   	@gender = gender
   	@ethnicity = ethnicity
   	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
-    puts "We have a new Santa, #{@name}."
+    @age = rand(141)
   end
 
   def speak
@@ -36,24 +36,43 @@ end
 
 # Initialize a Santa and verify instance methods
 
-# kris = Santa.new
+# RELEASE 2: Call on getter and setter methods to change attributes
+# RELEASE 3: Verify still functional after creating attr_reader and attr_accessor
 
-# kris.speak
-# kris.eat_milk_and_cookies("chocolate chip with macadamia nuts")
+santas = Array.new
+genders = ["agender", "male", "female", "bigender", "polygender", "N/A"]
+ethnicities = ["black", "Latino", "white", "arab", "asian", "native hawaiian", "N/A"]
 
-names = ["Kris", "Melvin", "Emily"]
-santas = []
-genders = ["agender", "female", "bigender", "male", "N/A"]
-ethnicities = ["black", "Latino", "white", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+santas << Santa.new(genders[3], ethnicities[2])
+santas << Santa.new(genders[0], ethnicities[1])
+santas << Santa.new(genders[1], ethnicities[4])
 
-santas << Santa.new(names[0], genders[3], ethnicities[2])
-santas << Santa.new(names[1], genders[0], ethnicities[1])
-santas << Santa.new(names[2], genders[1], ethnicities[4])
-
-puts "#{santas[1].name} is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
+puts "Santa is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
+santas[1].speak
 santas[1].celebrate_birthday
 santas[1].gender = "male"
 santas[1].get_mad_at("Vixen")
-puts "#{santas[1].name} is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
+puts "Santa is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
+puts " "
+# p santas"
 
-# p santas
+# RELEASE 4:
+# Write program to create lots of Santas.  Assign genders and ethnicities randomly from
+# arrays of choices, and age randomly between 0 and 140.  Print out the data of each 
+# Santa's attributes using the instance methods giving access to that data.
+# Begin by resetting santas array to empty.
+
+santas = Array.new
+counter = 0
+  until counter == 100
+    santas << Santa.new(genders[rand(6)], ethnicities[rand(7)])
+
+    puts "The new santa is #{santas[counter].age} years old, is #{santas[counter].gender}, and #{santas[counter].ethnicity}."    
+    
+    counter += 1
+
+  end
+
+
+
+
