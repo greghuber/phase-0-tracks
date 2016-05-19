@@ -58,17 +58,17 @@ class Bicylcle
   end
 
 # Define method mechanic which takes no parameter, but describes a bike
-# entering or leaving a shop, that is was working, now is not or 
-# vice versa, then  prints the new status of the bike's functionality.
+# entering or leaving a shop, that is was working, now is not, or 
+# vice versa, then prints the new status of the bike's functionality.
 
   def mechanic
-    if functionality
-    	functionality = false
+    if @functionality
+    	@functionality = false
     else
-    	functionality = true
+    	@functionality = true
     end
 
-    if functionality
+    if @functionality
       puts "The bike is working again!"
     else
       puts "The bike is in the shop! :("
@@ -79,6 +79,9 @@ end
 bike = Bicylcle.new("red", ["horn", "reflectors", "streamers"])
 
 bike.add_bling("aerobars")
-
+bike.plus_year
+bike.mechanic
+bike.paint_job("orange")
+bike.mechanic
 
 
