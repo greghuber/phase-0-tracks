@@ -90,13 +90,19 @@ end
 # bike.mechanic
 #__________________________________________________________
 
-# USER INTERFACE  Ask user if they want to create a new bike.
-# Until they answer no, ask them what color and decorations they
-# want.  Store decorations in an array.  Create the bike and store
-# new bike info in an array 'new_bikes'.
+# USER INTERFACE  Ask user if they want to create a new bike
+# ntil they answer 'no'. Ask for desired color and decorations.  
+# Create the bike and store new bike info in an array 'new_bikes'.
+
+# Establish initial values for array to receive new bike data,
+# any_bikes variable to determine printout at end, and
+# answer variable for input-request loop
+ 
 
 new_bikes = []
+any_bikes = true
 answer = nil
+
 until answer == "no"
 
   puts "Would you like to create a new bike?  Type 'yes' or 'no'"
@@ -132,7 +138,11 @@ until answer == "no"
       
 
     elsif answer == "no"
-      puts "Alright, that's enough bikes for now."
+      if new_bikes != []
+        puts "Alright, that's enough bikes for now."
+      else
+        any_bikes = false
+      end
       puts " "
 
     else
@@ -142,31 +152,38 @@ until answer == "no"
 end        
 
 #__________________________________________________________
-# Print out characteristics of new bikes created
+# Print out characteristics of new bikes created, if any
 # Print bling array in plain english
-p new_bikes
 
-puts "Here are the new bikes you created:"
-puts " "
-
-counter = 0
-
-until counter == new_bikes.length
-  puts "Bike Number #{counter + 1}"
-
-  new_bikes[counter].each do |key, value|
-    if key == :bling
-        if value == []
-          puts "#{key}: none"
-        else
-          puts "#{key}: #{value.join(', ')}"
-        end  
-    else
-      puts "#{key}: #{value}"
-    end
-  end
+if any_bikes
+  puts "Here are the new bikes you created:"
   puts " "
-  counter += 1  
+
+  counter = 0
+
+  until counter == new_bikes.length
+    puts "Bike Number #{counter + 1}"
+
+    new_bikes[counter].each do |key, value|
+      if key == :bling
+          if value == []
+            puts "#{key}: none"
+          else
+            puts "#{key}: #{value.join(', ')}"
+          end  
+      else
+        puts "#{key}: #{value}"
+      end
+
+    end
+    counter += 1
+    puts " "
+    
+  end   
+
+else
+  puts "No bikes entered.  Have a nice day."
+
 end
 
 
