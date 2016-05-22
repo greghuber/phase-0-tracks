@@ -1,0 +1,21 @@
+add_list = { "p" => 10}
+
+# def adder
+# 	item = gets.chomp
+# 	amount = gets.chomp.to_i
+# 	yield(item, amount)
+# end
+
+# adder{ |item, amount| add_list[item] = amount}
+# p add_list
+
+def removal
+	r_item = gets.chomp
+	yield(r_item)
+end
+
+removal{ |r_item| add_list.delete(r_item)}
+p add_list
+
+
+
