@@ -1,9 +1,11 @@
 # Create Santa class with:
 # A speak method, an eat_milk_and_cookies method, and an initialize method
-
-class Santa
   # give read only permission to @age and @ethnicity outside the class
   # and read/write permission to @gender outside the class
+
+  # Release 3: Refactor with attr_ declarations, comment out getter and setter
+
+class Santa
   attr_reader :age, :ethnicity
   attr_accessor :gender	
 
@@ -32,16 +34,29 @@ class Santa
 	@reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(offender_index))
   	puts "After #{other_reindeer}'s behavior the reindeer ranking is now #{@reindeer_ranking}."
   end
+
+  #def change_gender=(new_gender)
+  #    @gender = new_gender
+  #end
+
+  #def age
+  #  @age
+  #end
+
+  #def ethnicity
+  #  @ethnicity
+  #end
+
 end
 
 # Initialize a Santa and verify instance methods
 
-# RELEASE 2: Call on getter and setter methods to change attributes
-# RELEASE 3: Verify still functional after creating attr_reader and attr_accessor
+# Release 2: Call on getter and setter methods to change attributes
+# Release 3: Verify still functional after creating attr_reader and attr_accessor
 
 santas = Array.new
 genders = ["agender", "male", "female", "bigender", "polygender", "N/A"]
-ethnicities = ["black", "Latino", "white", "arab", "asian", "native hawaiian", "N/A"]
+ethnicities = ["black", "latino", "white", "arab", "asian", "native hawaiian", "N/A"]
 
 santas << Santa.new(genders[3], ethnicities[2])
 santas << Santa.new(genders[0], ethnicities[1])
@@ -54,9 +69,8 @@ santas[1].gender = "male"
 santas[1].get_mad_at("Vixen")
 puts "Santa is #{santas[1].age} years old, is #{santas[1].gender}, and #{santas[1].ethnicity}."
 puts " "
-# p santas"
 
-# RELEASE 4:
+# Release 4:
 # Write program to create lots of Santas.  Assign genders and ethnicities randomly from
 # arrays of choices, and age randomly between 0 and 140.  Print out the data of each 
 # Santa's attributes using the instance methods giving access to that data.
@@ -64,7 +78,7 @@ puts " "
 
 santas = Array.new
 counter = 0
-  until counter == 100
+  until counter == 1000
     santas << Santa.new(genders[rand(6)], ethnicities[rand(7)])
 
     puts "The new santa is #{santas[counter].age} years old, is #{santas[counter].gender}, and #{santas[counter].ethnicity}."    
