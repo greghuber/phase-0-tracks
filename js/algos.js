@@ -159,17 +159,34 @@ var tamir =  {name: "Tamir", city: "Chicago", age: 55, height: 65};
 console.log("Test again after Tamir's birthday, he's 55 now");
 console.log(kvMatchCheck(steven, tamir));
 console.log();
+
 // RELEASE 2 DRIVER TEST CODE
-console.log("RELEASE 2: Generate array of specified number of random words.");
+// console.log();
+
+// desiredWords = 5;
+// console.log("Call on function to generate " + desiredWords + " random words.");
+// console.log(randStringArray(desiredWords));
+// console.log();
+
+// desiredWords = 3;
+// console.log("Call on function to generate " + desiredWords + " random words.");
+// console.log(randStringArray(desiredWords));
+
+console.log("RELEASE 2: Generate 10 arrays of random number of random words.");
+console.log("Test for longest string in each.");
 console.log();
 
-desiredWords = 5;
-console.log("Call on function to generate " + desiredWords + " random words.");
-console.log(randStringArray(desiredWords));
-console.log();
+for (var i = 0; i < 10; i++) {
+  desiredWords = (Math.floor(Math.random() * 5) + 1);
+  console.log("desiredWords=" + desiredWords);
 
-desiredWords = 3;
-console.log("Call on function to generate " + desiredWords + " random words.");
-console.log(randStringArray(desiredWords));
+  array = randStringArray(desiredWords);
+  console.log(array);
+  console.log(longestString(array));
+}
+
+
+
+
 
 
