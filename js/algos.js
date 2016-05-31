@@ -56,7 +56,7 @@ function longestString(array) {
 
 
 
-// RELEASE !:
+// RELEASE 1:
 // Write a function that takes two objects and checks to see if they
 // share at least one key-value pair.
 
@@ -87,10 +87,46 @@ function kvMatchCheck(object1, object2) {
 }
 
 
+// RELEASE 2: Write a function that takes an integer for length, and 
+// builds and returns an array of strings of that given length. 
+// The words should be of random length, between 1 letter and 10 letters.
 
+// Initialize an empty array, and add random strings unitl their quantity
+// equals the value fed into the function;
 
+// To generate the random-length random string:
+// Create a string representing all characters available (allChar)
+// Generate a random index within that string by:
+// 1. Generate a random number between 0 and 1 (.random),
+// 2. Multiply by the number of available chars to 
+//    give a random number between 0 and the number of available chars,
+// 3. Round down to the nearest whole number (.floor),
+// 4. Find the char in allChar at the index number just generated,
+// 5. Add that character to the new string, and
+// 6. Contiune until the new string reaches the specified length.
 
+// Note: Use a similar process to calculate the random length between
+// 1 and 10 (assuring that 0 is not an option)
 
+function randStringArray(words) {
+	
+  stringArray = [] ;
+
+    for (var i = 0; i < words; i++) {
+
+      var newString = "";
+      var allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      length = (Math.floor(Math.random() * 10) + 1);
+
+      for ( var n = 0; n < length; n++ ) {
+        
+        newString += allChars.charAt(Math.floor(Math.random() * allChars.length));
+      } 
+      
+    stringArray.push(newString) ;
+    }
+  return stringArray
+}
 
 
 
@@ -121,30 +157,45 @@ function kvMatchCheck(object1, object2) {
 
 
 // // RELEASE 0 DRIVER TEST CODE 
+console.log("RELEASE 0: Find longest string in given array.");
 
-// console.log(longestString(["abc", "defghi", "jklmnopqr"]));
+console.log(longestString(["abc", "defghi", "jklmnopqr"]));
 
-// console.log(longestString(["abc", "defghi", "jklmno"]));
+console.log(longestString(["abc", "defghi", "jklmno"]));
 
-// console.log(longestString(["Ruby", "I like to code!", "JavaScript"]));
+console.log(longestString(["Ruby", "I like to code!", "JavaScript"]));
+console.log();
 
 
 
 // RELEASE 1 DRIVER TEST CODE
-console.log()
+console.log("RELEASE 1: Test objects for matching key-value pairs");
+console.log();
 
 var steven = {name: "Steven", age: 54};
 var tamir =  {name: "Tamir", city: "Chicago", age: 54, height: 65};
 
-console.log("Test where Steven and Tamir share the age 54")
+console.log("Test where Steven and Tamir share the age 54");
 console.log(kvMatchCheck(steven, tamir));
-
-console.log()
+console.log();
 
 var steven = {name: "Steven", age: 54};
 var tamir =  {name: "Tamir", city: "Chicago", age: 55, height: 65};
 
-console.log("Test again after Tamir's birthday, he's 55 now")
+console.log("Test again after Tamir's birthday, he's 55 now");
 console.log(kvMatchCheck(steven, tamir));
+console.log();
+// RELEASE 2 DRIVER TEST CODE
+console.log("RELEASE 2: Generate array of specified number of random words.");
+console.log();
+
+desiredWords = 5;
+console.log("Call on function to generate " + desiredWords + " random words.");
+console.log(randStringArray(desiredWords));
+console.log();
+
+desiredWords = 3;
+console.log("Call on function to generate " + desiredWords + " random words.");
+console.log(randStringArray(desiredWords));
 
 
