@@ -14,7 +14,7 @@
 
 function longestString(array) {
   
-  // Create new array whose items are the lengths of the array's strings
+  // Create second array whose items are the lengths of the first array's strings
 
   stringLengths = []
 
@@ -127,32 +127,6 @@ function randStringArray(words) {
     }
   return stringArray
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
