@@ -57,4 +57,9 @@ console.log(longestString(["abc", "defghi", "jklmnopqr"]));
 
 console.log(longestString(["abc", "defghi", "jklmno"]));
 
+console.log(longestString(["Ruby", "I like to code!", "JavaScript"]));
+
+
+
+
 
