@@ -65,5 +65,25 @@ RELEASE 2:
    8|Daredevil|1964|true|Enhanced Senses|New York|2
    
 
+RELEASE 3: ADDITIONAL JOINS (INNER AND FULL)
+CANNOT DO LEFT AND RIGHT AS NO RECORDS LACK APPEARANCE IN BOTH TABLES
+
+   sqlite> SELECT superheroes.name, superheroes.first_year, publishers.name FROM superheroes JOIN publishers ON superheroes.publisher_id = publishers.id WHERE publishers.name="Marvel Comics";
+
+   Spider-Man|1962|Marvel Comics
+   Iron Man|1963|Marvel Comics
+   Daredevil|1964|Marvel Comics
+
+
+   sqlite> SELECT superheroes.name, superheroes.first_year, superheroes.power, publishers.name FROM superheroes JOIN publishers ON superheroes.publisher_id = publishers.id;
+
+   Superman|1938|X-Ray Vision|DC Comics
+   Spider-Man|1962|Web Slinging|Marvel Comics
+   Iron Man|1963|Armor Suit|Marvel Comics
+   Batman|1939|Utility Belt|DC Comics
+   The Flash|1940|Super Speed|DC Comics
+   Wonder Woman|1941|Lasso of Truth|DC Comics
+   Daredevil|1964|Enhanced Senses|Marvel Comics
+   
 
 
