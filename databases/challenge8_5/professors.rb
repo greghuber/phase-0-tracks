@@ -78,7 +78,7 @@ if valid_prof
   
     if response == 'Enter'
     
-      puts "Enter the students name."
+      puts "Enter the students name, first and last"
       student_name = gets.chomp.split.map(&:capitalize).join(' ')
       
       puts "Do you need to see a list of course numbers? Type 'yes' or 'no' "
