@@ -1,0 +1,18 @@
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users, reviews, businesses WHERE user_id=users.id AND business_id=businesses.id;
+
+
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|Great service.  I'll come here for my next wedding, too!
+Denzel|George|Amir's Towing|1|Amir did more damage than the accident I called him after
+Holly|Berry|Lotus Yoga|5|I'm relaxed in places I didn't know I had places
+Mandy|Kaling|Sushi World|2|My fish came out raw!
+Bradford|Pitt|JoeBob's Sportz Barn|4|Bad spellerz, great service
+Holly|Berry|Amir's Towing|5|Great, quick, courteous tow
+Steven|Wonder|Lotus Yoga|4|I'm now limber enough to touch my nose with my finger the next time a policeman asks me to!
+
+
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users, reviews, businesses WHERE user_id=users.id AND business_id=businesses.id AND business_id=4;
+
+
+Holly|Berry|Lotus Yoga|5|I'm relaxed in places I didn't know I had places
+Steven|Wonder|Lotus Yoga|4|I'm now limber enough to touch my nose with my finger the next time a policeman asks me to!
