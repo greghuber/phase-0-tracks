@@ -1,0 +1,24 @@
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: #cc0000;
+	text-transform: uppercase;
+	font-size: 207%;
+}
+
+h1 strong {
+	color: #003399;
+}
+
+h2 {
+	font-family: Palatino, serif;
+}
+p {
+	width: 835px;
+	text-align: justify;
+	text-justify: auto;
+}
+
+ol {
+	float: left;
+	margin-right: 120px;
+}
