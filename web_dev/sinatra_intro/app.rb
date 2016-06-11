@@ -8,9 +8,10 @@ db.results_as_hash = true
 # write a basic GET route
 # add a query parameter
 # GET /
-# get '/' do
-#   "#{params[:name]} is #{params[:age]} years old."
-# end
+get '/' do
+  # "Hello World!"
+  "#{params[:name]} is #{params[:age]} years old."
+end
 
 # write a GET route with
 # route parameters
@@ -76,22 +77,32 @@ end
 get '/add/:number_01/:number_02' do
   number_01 = params[:number_01]
   number_02 = params[:number_02]
-  "#{number_01} + #{number_02} = #{number_01.to_i + number_02.to_i}"
+  "The sum of #{number_01} and #{number_02} is #{number_01.to_i + number_02.to_i}"
 end
 
 # Add route to search 'students' db and find all students with
 # the first name 'Bo'
 
-get '/search_by_first' do
+# get '/search_by_first' do
+#   students = db.execute("SELECT * FROM students")
+#   response = ""
+#   students.each do |student|
+#     if student['name'].split(' ')[0] == "Bo"
+#     response << "Name: #{student['name']}<br>"
+#     end
+#   end
+#   response
+# end
+
+get '/search_by_first/:name' do
+  name = params[:name]
   students = db.execute("SELECT * FROM students")
   response = ""
   students.each do |student|
-    if student['name'].split(' ')[0] == "Bo"
+    if student['name'].split(' ')[0] == name
     response << "Name: #{student['name']}<br>"
     end
   end
   response
 end
-
-
 
