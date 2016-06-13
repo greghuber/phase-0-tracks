@@ -11,16 +11,16 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $('#first').mouseenter(function(){
-        $('#first').fadeOut('slow');
-    });
-    $('#first').mouseleave(function(){
-        $('#first').fadeIn('slow');
-    });
-    $('#second').mouseenter(function(){
         $('#second').fadeOut('slow');
     });
-    $('#second').mouseleave(function(){
+    $('#first').mouseleave(function(){
         $('#second').fadeIn('slow');
+    });
+    $('#second').mouseenter(function(){
+        $('#first').fadeOut('slow');
+    });
+    $('#second').mouseleave(function(){
+        $('#first').fadeIn('slow');
     });
     
 });
