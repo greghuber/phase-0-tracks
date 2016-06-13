@@ -4,8 +4,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-    $('div').click(function(){
-        $('div').fadeOut();
+    $('#title').click(function(){
+        $(this).fadeOut();
     });
 });
 
